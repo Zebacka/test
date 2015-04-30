@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour {
 	public float StartTime;
 	public string CurrentTime;
-	
+	public float timeint;
 	public Rect timerRect;
 	
 	public Text text123;
@@ -22,8 +22,15 @@ public class Timer : MonoBehaviour {
 	void Update () {
 		StartTime += Time.deltaTime;
 		CurrentTime = string.Format ("{0:0.00}", StartTime);
-
+		timeint = StartTime;
 		text123 = GetComponent<Text>();
 		text123.text = CurrentTime;
+	}
+
+
+
+	public float time(){
+		return timeint;
+
 	}
 }
